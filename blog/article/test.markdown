@@ -1,8 +1,4 @@
----
-title: Testing Article
-date:  2014/12/09
-time:  23:27
----
+
 
 # Title
 
