@@ -3,13 +3,13 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Salmon's blog</title>
-		<meta name="author" content="Salmon">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="HandheldFriendly" content="true">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="author" content="Salmon" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 		
 		<link href="_plugins/resetCSS.css" type="text/css" rel="stylesheet" />
-		<link href="_plugins/template/github-markdown.css" type="text/css" rel="stylesheet" />
+		<link href="_plugins/template/markdown-github.css" type="text/css" rel="stylesheet" />
     
 		<script src="_plugins/jquery-2.1.1.min.js"></script>
 		<script src="_plugins/markdown.min.js"></script>
@@ -18,19 +18,18 @@
 
 	<body>
 		<div class='header'>
-			這裡是鮭魚小站，頁首
 		</div>
 
 		<div class='content'>
 		</div>
 
 		<div class='footer'>
-			這裡是鮭魚小站，頁尾
 		</div>
 
 		<script>
 			// Load 'header.html' and 'footer.html'.
-
+			$('.header').load('_static/header.html');
+			$('.footer').load('_static/footer.html');
 			// Replace the content.
 			var title = getParameterByName('title');
 			getArticleByTitle(title);
