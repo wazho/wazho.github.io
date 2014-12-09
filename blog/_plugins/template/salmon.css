@@ -1,0 +1,12 @@
+.content {
+    width: 80%;
+    padding: 30px;
+    margin: 50px auto;
+}
+
+@media screen and (max-width: 480px) {
+    .content {
+        padding: 15px;
+        width: 85%;
+    }
+}
