@@ -1,12 +1,11 @@
 function getArticleByTitle (title) {
 	$.ajax({
 		mimeType: 'text/plain; charset=utf-8',
-		url: 'article/' + title + '.txt',
+		url: 'article/' + title + '.md',
 		type: 'get',
 		dataType: 'text',
 		async: false,
 		success: function (data) {
-			console.log(data);
 			var markdownToHTML = markdown.toHTML(data);
 			$('.content').html(markdownToHTML);
 		}
