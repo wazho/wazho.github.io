@@ -21,7 +21,7 @@
 			這裡是鮭魚小站，頁首
 		</div>
 
-		<div class='content markdown-body'>
+		<div class='content'>
 		</div>
 
 		<div class='footer'>
@@ -29,8 +29,10 @@
 		</div>
 
 		<script>
+			// Replace the content.
 			var title = getParameterByName('title');
 			getArticleByTitle(title);
+			$('.content').addClass('markdown-body');
 		</script>
 	</body>
 </html>
