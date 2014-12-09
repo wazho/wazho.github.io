@@ -1,7 +1,6 @@
 ---
-title: 測試文章
-date:  2014/12/09
-time:  23:27
+layout: post
+title: Testing Article
 ---
 
 # Title
