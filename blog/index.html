@@ -8,12 +8,12 @@
 		<meta name="HandheldFriendly" content="true">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		
-		<link href="plugins/resetCSS.css" type="text/css" rel="stylesheet" />
-		<link href="plugins/template/github-markdown.css" type="text/css" rel="stylesheet" />
+		<link href="_plugins/resetCSS.css" type="text/css" rel="stylesheet" />
+		<link href="_plugins/template/github-markdown.css" type="text/css" rel="stylesheet" />
     
-		<script src="plugins/jquery-2.1.1.min.js"></script>
-		<script src="plugins/markdown.min.js"></script>
-		<script src="plugins/salmon.js"></script>
+		<script src="_plugins/jquery-2.1.1.min.js"></script>
+		<script src="_plugins/markdown.min.js"></script>
+		<script src="_plugins/salmon.js"></script>
 	</head>
 
 	<body>
@@ -29,6 +29,8 @@
 		</div>
 
 		<script>
+			// Load 'header.html' and 'footer.html'.
+
 			// Replace the content.
 			var title = getParameterByName('title');
 			getArticleByTitle(title);
