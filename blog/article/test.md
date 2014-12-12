@@ -2,6 +2,7 @@
 title: Testing Article
 date:  2014/12/09
 time:  23:27
+tags:  JavaScript, Markdown,   Web  , programming   skill  
 ---
 
 # Title

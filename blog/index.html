@@ -33,7 +33,17 @@
 			$('.footer').load('_static/footer.html');
 			// Replace the content.
 			var title = getParameterByName('title');
-			getArticleByTitle(title);
+			getArticleByTitle(title, function (isExist, markdownToHTML) {
+				if (isExist)
+					$('.content').html(markdownToHTML);
+				else {
+					$('.content').html('首頁');
+					getArticlesInfo(function () {
+
+					});
+				}
+			});
+
 			$('.content').addClass('markdown-body');
 		</script>
 	</body>

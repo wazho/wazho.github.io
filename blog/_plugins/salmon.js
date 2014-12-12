@@ -1,4 +1,4 @@
-function getArticleByTitle (title) {
+function getArticleByTitle (title, callback) {
 	$.ajax({
 		mimeType: 'text/plain; charset=utf-8',
 		url: 'article/' + title + '.md',
@@ -7,7 +7,23 @@ function getArticleByTitle (title) {
 		async: false,
 		success: function (data) {
 			var markdownToHTML = markdown.toHTML(data);
-			$('.content').html(markdownToHTML);
+			callback(true, markdownToHTML);
+		},
+		error: function (event) {
+			callback(false);
+		}
+	});
+}
+
+function getArticlesInfo (callback) {
+	$.ajax({
+		url: 'article/',
+		async: false,
+		success: function (data) {
+			callback(true);
+		},
+		error: function (event) {
+			callback(false);
 		}
 	});
 }
