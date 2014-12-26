@@ -1,6 +1,7 @@
-var fs = require('fs');
-var path = require('path');
-var async = require('async');
+var fs     = require('fs');
+var path   = require('path');
+var async  = require('async');
+var colors = require('colors');
 
 // Get the files in article directory.
 fs.readdir(__dirname + '/../article/', function (err, files) {
@@ -9,15 +10,14 @@ fs.readdir(__dirname + '/../article/', function (err, files) {
 		async.waterfall([
 			// 
 			function (callback) {
-				if (path.extname(file) === '.md') {
-					var fileSrc = path.normalize(__dirname + '/../article/' + file);
-					callback(null, fileSrc);
-				}
+				if (path.extname(file) === '.md')
+					callback(null, file);
 				else
-					callback(1);
+					callback(1, file);
 			},
 			// 
-			function (fileSrc, callback) {
+			function (file, callback) {
+				var fileSrc = path.normalize(__dirname + '/../article/' + file);
 				fs.readFile(fileSrc, 'utf-8', function (err, data) {
 					var lines = data.toString().split('\n');
 					if (lines.length >= 6) {
@@ -42,19 +42,29 @@ fs.readdir(__dirname + '/../article/', function (err, files) {
 						if (result) {
 							var articleCache = { title: title, date: date, time: time, tags: tags };
 							articlesCache.push(articleCache);
-							callback(null, fileSrc);
+							callback(null, file, articleCache);
 						}
 						else
-							callback(3, fileSrc);
+							callback(3, file);
 					}
 					else
-						callback(2, fileSrc);
+						callback(2, file);
 				});
 			}
-		], function (err, fileSrc) {
-			console.log(articlesCache);
+		], function (err, fileSrc, articleCache) {
+			switch (err) {
+				case 1:
+					console.log(("================== [Error] Extential name is not '.md'. ===================\n    File: " + fileSrc + "\n===========================================================================\n").toString().grey);
+					break;
+				case 2:
+				case 3:
+					console.log(("===================== [Error] Aritcle rule is wrong. ======================\n    File: " + fileSrc + "\n===========================================================================\n").toString().red);
+					break;
+				case null:
+					console.log(("===================== [Success] Loading the article. ======================\n    File: " + fileSrc + "\n===========================================================================\n").toString().green);
+					// console.log(("===================== [Success] Loading the article. ======================\n    File: " + fileSrc + "\n\n" + JSON.stringify(articleCache, undefined, 2) + "\n===========================================================================\n").toString().green);
+					break;
+			}
 		});
 	});
-
-	
 });
