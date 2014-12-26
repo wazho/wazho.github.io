@@ -6,7 +6,7 @@ var colors = require('colors');
 // Get the files in article directory.
 fs.readdir(__dirname + '/../article/', function (err, files) {
 	var articlesCache = new Array();
-	files.forEach(function (file) {
+	async.map(files, function (file, callback) {
 		async.waterfall([
 			// 
 			function (callback) {
@@ -40,7 +40,7 @@ fs.readdir(__dirname + '/../article/', function (err, files) {
 
 						var result = top & bottom & (title !== false) & (date !== false) & (time !== false) & (tags !== false);
 						if (result) {
-							var articleCache = { title: title, date: date, time: time, tags: tags };
+							var articleCache = { url: file, title: title, date: date, time: time, tags: tags };
 							articlesCache.push(articleCache);
 							callback(null, file, articleCache);
 						}
@@ -51,20 +51,24 @@ fs.readdir(__dirname + '/../article/', function (err, files) {
 						callback(2, file);
 				});
 			}
-		], function (err, fileSrc, articleCache) {
+		], function (err, fileName, articleCache) {
 			switch (err) {
 				case 1:
-					console.log(("================== [Error] Extential name is not '.md'. ===================\n    File: " + fileSrc + "\n===========================================================================\n").toString().grey);
+					console.log(("=================== [Skip] Extential name is not '.md'. ===================\n    File: " + fileName + "\n===========================================================================\n").toString().grey);
 					break;
 				case 2:
 				case 3:
-					console.log(("===================== [Error] Aritcle rule is wrong. ======================\n    File: " + fileSrc + "\n===========================================================================\n").toString().red);
+					console.log(("===================== [Error] Aritcle rule is wrong. ======================\n    File: " + fileName + "\n===========================================================================\n").toString().red);
 					break;
 				case null:
-					console.log(("===================== [Success] Loading the article. ======================\n    File: " + fileSrc + "\n===========================================================================\n").toString().green);
-					// console.log(("===================== [Success] Loading the article. ======================\n    File: " + fileSrc + "\n\n" + JSON.stringify(articleCache, undefined, 2) + "\n===========================================================================\n").toString().green);
+					console.log(("===================== [Success] Loading the article. ======================\n    File: " + fileName + "\n===========================================================================\n").toString().green);
+					// console.log(("===================== [Success] Loading the article. ======================\n    File: " + fileName + "\n\n" + JSON.stringify(articleCache, undefined, 2) + "\n===========================================================================\n").toString().green);
 					break;
 			}
+			callback();
 		});
+	}, function (err) {
+		console.log(articlesCache);
+		fs.writeFile(__dirname + "/../generation.json", JSON.stringify(articlesCache));
 	});
 });
