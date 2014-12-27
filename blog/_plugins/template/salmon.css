@@ -1,3 +1,7 @@
+.hide {
+	display: none;
+}
+
 .content {
     width: 80%;
     padding: 30px;

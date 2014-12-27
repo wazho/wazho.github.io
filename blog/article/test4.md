@@ -1,11 +1,11 @@
 ---
-title: Testing Article II
+title: Testing Article 第二集
 date:  2014/12/26
 time:  23:27
 tags:  JavaScript 
 ---
 
-# Title
+# 偶爾也想打中文
 
 ## Subtitle
 

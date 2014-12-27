@@ -13,6 +13,7 @@
 		<link href="_plugins/template/salmon.css" type="text/css" rel="stylesheet" />
     
 		<script src="_plugins/jquery-2.1.1.min.js"></script>
+		<script src="_plugins/async.min.js"></script>
 		<script src="_plugins/markdown.min.js"></script>
 		<script src="_plugins/salmon.js"></script>
 	</head>
@@ -22,6 +23,11 @@
 		</div>
 
 		<article class='content'>
+			<div class='article hide'>
+				<a class='title'><span>Aritcle_title</span></a>
+				<span class='time'>Date_and_time</span>
+				<span class='tags'>Tags</span>
+			</div>
 		</article>
 
 		<div class='footer'>
@@ -31,20 +37,38 @@
 			// Load 'header.html' and 'footer.html'.
 			$('.header').load('_static/header.html');
 			$('.footer').load('_static/footer.html');
-			// Replace the content.
-			var title = getParameterByName('title');
-			getArticleByTitle(title, function (isExist, markdownToHTML) {
-				if (isExist)
-					$('.content').html(markdownToHTML);
-				else {
-					$('.content').html('首頁');
-					getArticlesInfo(function () {
-
+			// Choose the CSS template.
+			$('.content').addClass('markdown-body');
+			//
+			async.waterfall([
+				// Get the info of all articles.
+				function (callback) {
+					getArticlesInfo(function (articles) {
+						callback(null, articles);
+					});
+				},
+				// Replace the content.
+				function (articles, callback) {
+					var title = getParameterByName('title');
+					getArticleByTitle(title, function (isExist, markdownToHTML) {
+						if (isExist)
+							$('.content').html(markdownToHTML);
+						else {
+							articles.forEach(function (article) {
+								console.log(article.title);
+								var clone = $('.content .article.hide').clone().removeClass('hide');
+								clone.appendTo($('.content'));
+								clone.find('a.title').attr('href', 'index.html?title=' + article.url);
+								clone.find('a.title span').html(article.title);
+								clone.find('span.tags').html(article.tags);
+							});
+						}
+						callback(null);
 					});
 				}
-			});
+			], function (err) {
 
-			$('.content').addClass('markdown-body');
+			});
 		</script>
 	</body>
 </html>

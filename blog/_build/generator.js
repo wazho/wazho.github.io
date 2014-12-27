@@ -40,7 +40,7 @@ fs.readdir(__dirname + '/../article/', function (err, files) {
 
 						var result = top & bottom & (title !== false) & (date !== false) & (time !== false) & (tags !== false);
 						if (result) {
-							var articleCache = { url: file, title: title, date: date, time: time, tags: tags };
+							var articleCache = { url: path.basename(file, '.md'), title: title, date: date, time: time, tags: tags };
 							articlesCache.push(articleCache);
 							callback(null, file, articleCache);
 						}
@@ -62,7 +62,6 @@ fs.readdir(__dirname + '/../article/', function (err, files) {
 					break;
 				case null:
 					console.log(("===================== [Success] Loading the article. ======================\n    File: " + fileName + "\n===========================================================================\n").toString().green);
-					// console.log(("===================== [Success] Loading the article. ======================\n    File: " + fileName + "\n\n" + JSON.stringify(articleCache, undefined, 2) + "\n===========================================================================\n").toString().green);
 					break;
 			}
 			callback();
