@@ -6,7 +6,7 @@ function getArticleByTitle(title, callback) {
 		dataType: 'text',
 		async: false,
 		success: function (data) {
-			var markdownToHTML = markdown.toHTML(data);
+			var markdownToHTML = marked(data);
 			callback(true, markdownToHTML);
 		},
 		error: function (event) {
