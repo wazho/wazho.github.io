@@ -2,7 +2,7 @@
 title: Testing Article 第二集
 date:  2014/12/26
 time:  23:27
-tags:  JavaScript 
+tags:  JavaScript , programming   skill 
 ---
 
 # 偶爾也想打中文
@@ -37,6 +37,10 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 Inline `code` has `back-ticks around` it.
 
 [link](http://salmon.tw)
+
+[Return to home](./index.html)
+
+<a href="http://example.com/" target="_blank">'a' tag link</a>
 
     Here is the code.
 
