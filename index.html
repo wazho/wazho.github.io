@@ -1,91 +1,187 @@
 <!doctype html>
-<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>About me, Salmon.</title>
-  <meta name="author" content="Salmon">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="HandheldFriendly" content="true">
-  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Simonetta:400,900|Balthazar">
-  <link rel="stylesheet" type="text/css" href="index_page_files/styles.css">
-  <link rel="stylesheet" type="text/css" href="index_page_files/responsive.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>About me, Salmon.</title>
+	<meta name="author" content="Salmon">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Simonetta:400,900|Balthazar">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Bree+Serif">
+	<link rel="stylesheet" type="text/css" href="sources/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="sources/css/font-awesome.min.css">
 </head>
+<style>
+	body {
+		background: #f2f2f2 url('sources/images/bg-tile.png');
+		animation: bg-move 120s linear infinite;
+		-webkit-animation: bg-move 120s linear infinite;
+	}
+	@keyframes bg-move {
+		to {
+			background-position: -200% -400%;
+		}
+	}
+	@-webkit-keyframes bg-move {
+		to {
+			background-position: -200% -400%;
+		}
+	}
+	html, body {
+		height: 100%;
+	}
+	.totalContainer {
+		height: 100%;
+	}
+	.topContainer {
+		position: relative;
+		top: 50%;
+		width: 750px;
+		margin: 0 auto;
+		white-space: nowrap;
+		transform: translateY(-50%);
+	}
+	.profile {
+		display: inline-block;
+		width: 100%;
+	}
+	.profile h1.name {
+		font-family: "Simonetta", "Trebuchet MS", Arial, sans-serif;
+		font-size: 2.6em;
+		color: #454545;
+		text-shadow: 2px 2px #CCCCCC;
+		margin: 0.1em 0;
+	}
+	.profile h2.subtitle {
+		font-family: "Bree Serif", "Trebuchet MS", Arial, sans-serif;
+		font-size: 1.5em;
+		color: #777777;
+		margin: 0.05em 0 1.05em;
+		padding-left: 0.35em;
+	}
+	.profile p {
+		font-family: "Bree Serif", "Trebuchet MS", Arial, sans-serif;
+		color: #555555;
+		font-size: 1.15em;
+		margin: 0.05em 0;
+		padding-left: 0.15em;
+	}
+	.profile-left, .profile-right {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.profile-right {
+		padding-left: 2em;
+	}
+	.thumbnail {
+		height: 125px;
+		width: 125px;
+		overflow: hidden;
+		border-radius: 20%;
+		background: #F2F2F2;
+		box-shadow: 0px 0px 0px 0.8em rgba(255, 255, 255, 0.35);
+		transition-property: box-shadow;
+		transition-duration: 500ms;
+	}
+	.thumbnail:hover {
+		box-shadow: 0px 0px 0px 0.8em rgba(255, 255, 255, 0.75);
+	}
+	.thumbnail img {
+		width: 100%;
+	}
+	.content {
+		width: 350px;
+		margin: 0 auto;
+	}
+	.socialContainer {
+		margin: 2em auto;
+	}
+	.socialContainer a {
+		color: inherit;
+	}
+	.socialContainer i {
+		margin: 0 25px;
+		transition-property: color;
+		transition-duration: 250ms;
+	}
+	.socialContainer i.github:hover {
+		color: #767676;
+	}
+	.socialContainer i.facebook:hover {
+		color: #3A5795;
+	}
+	.socialContainer i.youtube:hover {
+		color: #CC181E;
+	}
+	@media screen and (max-width: 767px) {
+		.topContainer {
+			width: 767px;
+		}
+		.profile .nickname {
+			display: none;
+		}
+	}
+	@media screen and (max-width: 480px) {
+		.topContainer {
+			width: 320px;
+			margin: 0;
+		}
+		.profile h2.subtitle {
+			margin-bottom: 0.75em;
+		}
+		.profile p {
+			font-size: 1.05em;
+			margin: 0.45em 0;
+		}
+		.profile h1.name, .profile h2.subtitle, .profile p {
+			text-align: center;
+		}
+		.profile h2.subtitle {
+			padding: 0;
+		}
+		.profile-left, .profile-right {
+			display: table;
+		}
+		.profile-left {
+			margin: 1em auto;
+		}
+		.profile-right {
+			padding-left: 0;
+			width: 100%;
+			-webkit-box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+			        box-sizing: border-box;
+		}
+		.socialContainer {
+			text-align: center;
+		}
+	}
+</style>
+
 
 <body>
-	<div id="w">
-		<header class="clearfix">
-			<span>首頁重新設計中 :)</span>
-			<div id="info">			
-				<h1><span itemprop="name">Salmon</span></h1>
-				<h3><span itemprop="jobTitle">Programmer &amp; Dreamer</span></h3>
-				<small itemprop="address">
-					<span itemprop="addressLocality">Zhongli City</span>, 
-					<span itemprop="addressRegion">Taoyuan County</span>, 
-					<span itemprop="addressCountry">Taiwan</span>
-				</small>
-				<small><span itemprop="email">salmon.zh.tw@gmail.com</span></small>
-				<br/>
-				<small>
-					<a href="http://fb.me/grass0916" itemprop="url">Salmon@Facebook</a>
-					</br>
-					<a href="https://www.youtube.com/user/grass0916" itemprop="url">Salmon@YouTube</a>
-					</br>
-					<a href="https://github.com/grass0916" itemprop="url">Salmon@Github</a>
-				</small>
+	<div class='totalContainer'>
+		<div class='topContainer'>
+			<div class='profile'>
+				<div class='profile-left'>
+					<div class='thumbnail'>
+						<img src='sources/images/salmon.png' />
+					</div>
+				</div>
+				<div class='profile-right'>
+					<h1 class='name'>Ze-Hao, Wang <span class='nickname'>(Salmon)</span></h1>
+					<h2 class='subtitle'>Full-Stack Developer</h2>
+					<p class='address'>Zhongli District, Taoyuan City, Taiwan</p>
+					<p class='email'>salmon.zh.tw <i class='fa fa-at'></i> gmail.com</p>
+				</div>
 			</div>
-			
-			<div id="photo">
-				<img src="index_page_files/images/salmon.png" itemprop="image" />
+			<div class='socialContainer'>
+				<a href='https://github.com/grass0916' target='_blank'><i class='github fa fa-github fa-3x'></i></a>
+				<a href='http://fb.me/grass0916' target='_blank'><i class='facebook fa fa-facebook-square fa-3x'></i></a>
+				<a href='https://www.youtube.com/user/grass0916' target='_blank'><i class='youtube fa fa-youtube fa-3x'></i></a>
 			</div>
-		</header>
-		
-		<section id="profile">
-			<h2>Hi! I'm Salmon!</h2>
-			<p itemprop="description">Usually use account "grass0916".</p>
-			<p>I like to eat salmon.</p>
-		</section>
-		
-		<section id="skills">
-			<h2>Skillset</h2>
-			<section id="skills-left">
-				<h4 itemprop="about">Interested Knowledge</h4>
-				<ul>
-					<li itemprop="itemListElement">Machine_Learning</li>
-					<li itemprop="itemListElement">Social_Network</li>
-					</br>
-				</ul>
-			</section>
-			
-			<section id="skills-left">
-				<h4 itemprop="about">Major Development</h4>
-				<ul>
-					<li itemprop="itemListElement">R</li>
-					<li itemprop="itemListElement">C/C++</li>
-					<li itemprop="itemListElement">JavaScript</li>
-					<li itemprop="itemListElement">SQL_Database</li>
-					</br>
-				</ul>
-			</section>
-		</section>
-					
-		<section id="education">
-			<h2>Past Education</h2>
-			<p><span itemprop="alumniOf">Chung Yuan Christian University</span> will graduate of JUNE 2015.</p>
-			<p><span itemprop="alumniOf">Ping Jen Senior High School</span> graduated of 2011.</p>
-		</section>
-		
-		<section id="experience">
-			<h2>Work Experience</h2>
-			<p><a href="http://mmnet.iis.sinica.edu.tw/">Academia Sinica IIS, MMNet</a>, Intern ~ June 2014 - Present</p>
-			<p>Ragnarok Online private server, Scripter  ~ Feb. 2013 - Aug. 2013</p>
-			<p>We-Win Junior Cram school, Teacher ~ Aug. 2012 - May 2014</p>
-		</section>
-		
-		<section id="articles">
-			<h2>Recent Articles</h2>
-		</section>
-		<br>
+		</div>
+		<div class='content'>
+			<div>
+			</div>
+		</div>
 	</div>
 </body>
-</html>
