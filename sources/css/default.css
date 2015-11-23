@@ -19,11 +19,11 @@ body {
 .totalContainer {
 	height: 100%;
 }
-.topContainer {
+.container {
 	position: relative;
 	top: 50%;
 	width: 600px;
-	margin: 0 auto;
+	margin: 0 auto 30% auto;
 	white-space: nowrap;
 	   -moz-transform: translateY(-50%);
 	-webkit-transform: translateY(-50%);
@@ -107,13 +107,57 @@ body {
 .socialContainer i.youtube:hover {
 	color: #CC181E;
 }
+.block h1.title {
+	font-family: "Simonetta", "Trebuchet MS", Arial, sans-serif;
+	font-size: 2.6em;
+	color: #454545;
+	text-shadow: 2px 2px #CCCCCC;
+	margin: 0.1em 0;
+	padding-left: 0.35em;
+	border-bottom: 1px dashed #AAA;
+}
+.block ul {
+	font-family: "Bree Serif", "Trebuchet MS", Arial, sans-serif;
+	color: #555555;
+	font-size: 1.25em;
+	margin-top: 0.75em;
+	padding-left: 1.25em;
+	padding-right: 1em;
+	white-space: normal;
+	list-style: none;
+}
+.block ul li {
+	margin-bottom: 2em;
+}
+.block a {
+	color: inherit;
+	text-decoration: none;
+	transition: all 300ms;
+}
+.block a:hover {
+	color: green;
+}
+.block p {
+	margin: 0.35em 0;
+}
+.block p.during {
+	font-style: italic;
+	text-align: right;
+	margin-top: 0.35em;
+}
+.block.education p.degree, .block.work p.title {
+	font-size: 1.15em;
+}
+.block.education p:not(.degree), .block.work p:not(.title) {
+	padding-left: 0.5em;
+}
 @media screen and (max-width: 767px) {
 	.profile .nickname {
 		display: none;
 	}
 }
 @media screen and (max-width: 480px) {
-	.topContainer {
+	.container {
 		width: 320px;
 	}
 	.profile h2.subtitle {
