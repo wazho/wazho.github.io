@@ -51,6 +51,7 @@
 			<h1 class='title'>Education</span></h1>
 			<ul>
 				<li class='scroll-trigger'>
+					<img class='pawprint' src='sources/images/pawprint.png' />
 					<p class='title degree'>M.S.</p>
 					<div class='basic'>
 						<p class='departant'>Department of Computer Science and Information Engineering</p>
@@ -62,6 +63,7 @@
 					<p class='during'>Feb. 2016 - present</p>
 				</li>
 				<li class='scroll-trigger'>
+					<img class='pawprint' src='sources/images/pawprint.png' />
 					<p class='title degree'>B.S.</p>
 					<div class='basic'>
 						<p class='departant'>Department of Information and Computer Engineering</p>
@@ -80,6 +82,7 @@
 			<h1 class='title'>Work Experience</span></h1>
 			<ul>
 				<li class='scroll-trigger'>
+					<img class='pawprint' src='sources/images/pawprint.png' />
 					<p class='title job'>Intern / Research Assistants</p>
 					<div class='basic'>
 						<p class='company'>Institute of Information Science - Academia Sinica</p>
@@ -96,7 +99,8 @@
 </body>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-48091390-1', 'auto');ga('send', 'pageview');
+	// Google analytics tracking.
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-48091390-1', 'auto');ga('send', 'pageview');
 </script>
 
 <script>
@@ -115,11 +119,12 @@
 		$container.style.minHeight     = '0px';
 	}
 	// Detect the scroll position the trigger the hovered element.
+	// 'scroll, addEventListener' makes the resource too wasteful.
 	setInterval(function pageScrollTriggerHover() {
 		// pcY - pageCenterY.
 		var pcY      = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) / 2;
 		var $trigers = document.getElementsByClassName('scroll-trigger');
-		[].forEach.call($trigers, function ($e, i) {
+		[].forEach.call($trigers, function ($e) {
 			// eYt - elementY_top ; eYb - elementY_btm.
 			var eYt = $e.getBoundingClientRect().top;
 			var eYb = $e.getBoundingClientRect().bottom;
