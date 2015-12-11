@@ -151,6 +151,25 @@ body {
 .block.education p:not(.degree), .block.work p:not(.title) {
 	padding-left: 0.5em;
 }
+.block p.advisor, .block p.boss {
+	margin-left: 0.5em;
+	opacity: 0;
+	max-height: 0;
+	-webkit-transition: opacity 350ms, max-height 750ms;
+	   -moz-transition: opacity 350ms, max-height 750ms;
+	    -ms-transition: opacity 350ms, max-height 750ms;
+	     -o-transition: opacity 350ms, max-height 750ms;
+	        transition: opacity 350ms, max-height 750ms;
+}
+.block li:hover p.advisor, .block li:hover p.boss {
+	opacity: 1;
+	max-height: 3em;
+	-webkit-transition: opacity 550ms, max-height 750ms;
+	   -moz-transition: opacity 550ms, max-height 750ms;
+	    -ms-transition: opacity 550ms, max-height 750ms;
+	     -o-transition: opacity 550ms, max-height 750ms;
+	        transition: opacity 550ms, max-height 750ms;
+}
 @media screen and (max-width: 767px) {
 	.profile .nickname {
 		display: none;
