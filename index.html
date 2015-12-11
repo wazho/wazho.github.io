@@ -26,65 +26,97 @@
 	<link rel="stylesheet" type="text/css" href="sources/css/default.css">
 </head>
 <body>
-	<div class='totalContainer'>
-		<div class='container'>
-			<div class='profile'>
-				<div class='profile-left'>
-					<div class='thumbnail'>
-						<img src='sources/images/salmon.png' ondragstart='return false'/>
-					</div>
-				</div>
-				<div class='profile-right'>
-					<h1 class='name'>Ze-Hao Wang <span class='nickname'>(Salmon)</span></h1>
-					<h2 class='subtitle'>Full-Stack Developer</h2>
-					<p class='address'>Zhongli District, Taoyuan City, Taiwan</p>
-					<p class='email'>salmon.zh.tw <i class='fa fa-at'></i> gmail.com</p>
+	<div class='container'>
+		<div id='profile' class='profile'>
+			<div class='profile-left'>
+				<div class='thumbnail'>
+					<img src='sources/images/salmon.png' ondragstart='return false'/>
 				</div>
 			</div>
-			<div class='socialContainer' ondragstart='return false'>
-				<a href='https://github.com/grass0916' target='_blank'><i class='github fa fa-github fa-3x'></i></a>
-				<a href='http://fb.me/grass0916' target='_blank'><i class='facebook fa fa-facebook-square fa-3x'></i></a>
-				<a href='https://www.youtube.com/user/grass0916' target='_blank'><i class='youtube fa fa-youtube fa-3x'></i></a>
+			<div class='profile-right'>
+				<h1 class='name'>Ze-Hao Wang <span class='nickname'>(Salmon)</span></h1>
+				<h2 class='subtitle'>Full-Stack Developer</h2>
+				<p class='address'>Zhongli District, Taoyuan City, Taiwan</p>
+				<p class='email'>salmon.zh.tw <i class='fa fa-at'></i> gmail.com</p>
 			</div>
 		</div>
-		<div class='container'>
-			<div class='block education'>
-				<h1 class='title'>Education</span></h1>
-				<ul>
-					<li>
-						<p class='degree'>M.S.</p>
+		<div id='socail' class='socialContainer' ondragstart='return false'>
+			<a href='https://github.com/grass0916' target='_blank'><i class='github fa fa-github fa-3x'></i></a>
+			<a href='http://fb.me/grass0916' target='_blank'><i class='facebook fa fa-facebook-square fa-3x'></i></a>
+			<a href='https://www.youtube.com/user/grass0916' target='_blank'><i class='youtube fa fa-youtube fa-3x'></i></a>
+		</div>
+	</div>
+	<div class='container'>
+		<div class='block education'>
+			<h1 class='title'>Education</span></h1>
+			<ul>
+				<li>
+					<p class='title degree'>M.S.</p>
+					<div class='basic'>
 						<p class='departant'>Department of Computer Science and Information Engineering</p>
 						<p class='school'>National Taiwan University of Science and Technology</p>
-						<p class='advisor'>> Advisor: Prof. Wen-Kai Tai @ GAME Lab</p>
-						<p class='during'>Feb. 2016 - present</p>
-					</li>
-					<li>
-						<p class='degree'>B.S.</p>
+					</div>
+					<div class='detail'>
+						<p class='advisor'>> Advisor:<span class='name'>Prof. Wen-Kai Tai</span>@ GAME Lab</p>
+					</div>
+					<p class='during'>Feb. 2016 - present</p>
+				</li>
+				<li>
+					<p class='title degree'>B.S.</p>
+					<div class='basic'>
 						<p class='departant'>Department of Information and Computer Engineering</p>
 						<p class='school'>Chung Yuan Christian University</p>
-						<p class='advisor'>> Advisor: Prof. Yi-Hung Wu @ KD Lab</p>
-						<p class='during'>Sept. 2011 - June 2015</p>
-					</li>
-				</ul>
-			</div>
+					</div>
+					<div class='detail'>
+						<p class='advisor'>> Advisor:<span class='name'>Prof. Yi-Hung Wu</span>@ KD Lab</p>
+					</div>
+					<p class='during'>Sept. 2011 - June 2015</p>
+				</li>
+			</ul>
 		</div>
-		<div class='container'>
-			<div class='block work'>
-				<h1 class='title'>Work Experience</span></h1>
-				<ul>
-					<li>
-						<p class='title'>Intern / Research Assistants</p>
-						<p class='company'>Institute of Information Science - Academia Sinica</p>
-						<p class='boss'>> PI: Dr. Sheng-Wei Chen @ <a href='http://mmnet.iis.sinica.edu.tw/' target='_blank'>MMNET</a></p>
-						<p class='during'>June 2014 - present</p>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<footer></footer>
 	</div>
+	<div class='container'>
+		<div class='block work'>
+			<h1 class='title'>Work Experience</span></h1>
+			<ul>
+				<li>
+					<p class='title job'>Intern / Research Assistants</p>
+					<div class='basic'>
+						<p class='company'>Institute of Information Science - Academia Sinica</p>
+					</div>
+					<div class='detail'>
+						<p class='boss'>> PI:<span class='name'>Dr. Sheng-Wei Chen</span>@ <a href='http://mmnet.iis.sinica.edu.tw/' target='_blank'>MMNET</a></p>
+					</div>
+					<p class='during'>June 2014 - present</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<footer></footer>
 </body>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-48091390-1', 'auto');ga('send', 'pageview');
+</script>
+
+<script>
+	// Resize profile container.
+	profileContainerResize();
+	window.addEventListener('resize', profileContainerResize);
+	function profileContainerResize(event) {
+		var $profile   = document.getElementById('profile');
+		var $socail    = document.getElementById('socail');
+		var $container = $profile.parentNode;
+		var outerHeight     = getOuterHeight($profile) + getOuterHeight($socail);
+		var containerHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		var verticalPadding = Math.ceil((containerHeight - outerHeight) / 2);
+		$container.style.paddingTop    = verticalPadding + 'px';
+		$container.style.paddingBottom = verticalPadding + 'px';
+		$container.style.minHeight     = '0px';
+	}
+	// Get the object whole height. (include margin)
+	function getOuterHeight(o) {
+		var s = o.currentStyle || window.getComputedStyle(o);
+		return o.offsetHeight + parseInt(s.marginTop) + parseInt(s.marginBottom);
+	}
 </script>
