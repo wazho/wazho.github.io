@@ -3,18 +3,6 @@ html, body {
 }
 body {
 	background: #f2f2f2 url('../images/bg-tile.png');
-	-webkit-animation: bg-move 120s linear infinite;
-	        animation: bg-move 120s linear infinite;
-}
-@keyframes bg-move {
-	to {
-		background-position: -200% -400%;
-	}
-}
-@-webkit-keyframes bg-move {
-	to {
-		background-position: -200% -400%;
-	}
 }
 .container {
 	position: relative;
@@ -108,7 +96,7 @@ body {
 	font-size: 2.6em;
 	color: #454545;
 	text-shadow: 2px 2px #CCCCCC;
-	margin: 0.1em 0;
+	margin: 0.25em 0 0.65em 0;
 	padding-left: 0.35em;
 	border-bottom: 1px dashed #AAA;
 }
