@@ -3,8 +3,8 @@ html, body {
 }
 body {
 	background: #f2f2f2 url('../images/bg-tile.png');
-	animation: bg-move 120s linear infinite;
 	-webkit-animation: bg-move 120s linear infinite;
+	        animation: bg-move 120s linear infinite;
 }
 @keyframes bg-move {
 	to {
@@ -23,12 +23,12 @@ body {
 	position: relative;
 	top: 50%;
 	width: 600px;
-	margin: 0 auto 30% auto;
+	margin: 0 auto 40% auto;
 	white-space: nowrap;
-	   -moz-transform: translateY(-50%);
 	-webkit-transform: translateY(-50%);
-	     -o-transform: translateY(-50%);
+	   -moz-transform: translateY(-50%);
 	    -ms-transform: translateY(-50%);
+	     -o-transform: translateY(-50%);
 	        transform: translateY(-50%);
 }
 .profile {
@@ -80,10 +80,10 @@ body {
 	transition: all 500ms;
 }
 .thumbnail:hover img {
-	   -moz-transform: scale(1.65) translateY(15%);
 	-webkit-transform: scale(1.65) translateY(15%);
-	     -o-transform: scale(1.65) translateY(15%);
+	   -moz-transform: scale(1.65) translateY(15%);
 	    -ms-transform: scale(1.65) translateY(15%);
+	     -o-transform: scale(1.65) translateY(15%);
 	        transform: scale(1.65) translateY(15%);
 }
 .socialContainer {
@@ -152,7 +152,8 @@ body {
 	padding-left: 0.5em;
 }
 .block p.advisor, .block p.boss {
-	margin-left: 0.5em;
+	margin: 0 0 0 0.25em;
+	color: #656565;
 	opacity: 0;
 	max-height: 0;
 	-webkit-transition: opacity 350ms, max-height 750ms;
@@ -169,6 +170,9 @@ body {
 	    -ms-transition: opacity 550ms, max-height 750ms;
 	     -o-transition: opacity 550ms, max-height 750ms;
 	        transition: opacity 550ms, max-height 750ms;
+}
+footer {
+	height: 225px;
 }
 @media screen and (max-width: 767px) {
 	.profile .nickname {
