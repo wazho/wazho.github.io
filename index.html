@@ -50,7 +50,7 @@
 		<div class='block education'>
 			<h1 class='title'>Education</span></h1>
 			<ul>
-				<li>
+				<li class='scroll-trigger'>
 					<p class='title degree'>M.S.</p>
 					<div class='basic'>
 						<p class='departant'>Department of Computer Science and Information Engineering</p>
@@ -61,7 +61,7 @@
 					</div>
 					<p class='during'>Feb. 2016 - present</p>
 				</li>
-				<li>
+				<li class='scroll-trigger'>
 					<p class='title degree'>B.S.</p>
 					<div class='basic'>
 						<p class='departant'>Department of Information and Computer Engineering</p>
@@ -79,7 +79,7 @@
 		<div class='block work'>
 			<h1 class='title'>Work Experience</span></h1>
 			<ul>
-				<li>
+				<li class='scroll-trigger'>
 					<p class='title job'>Intern / Research Assistants</p>
 					<div class='basic'>
 						<p class='company'>Institute of Information Science - Academia Sinica</p>
@@ -114,6 +114,23 @@
 		$container.style.paddingBottom = verticalPadding + 'px';
 		$container.style.minHeight     = '0px';
 	}
+	// Detect the scroll position the trigger the hovered element.
+	setInterval(function pageScrollTriggerHover() {
+		// pcY - pageCenterY.
+		var pcY      = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) / 2;
+		var $trigers = document.getElementsByClassName('scroll-trigger');
+		[].forEach.call($trigers, function ($e, i) {
+			// eYt - elementY_top ; eYb - elementY_btm.
+			var eYt = $e.getBoundingClientRect().top;
+			var eYb = $e.getBoundingClientRect().bottom;
+			if ((pcY >= eYt && pcY <= eYb) && ! /\bhover\b/.test($e.className)) {
+				$e.className += ' hover';
+			} else if ((pcY < eYt || pcY > eYb) && /\bhover\b/.test($e.className)) {
+				$e.className = $e.className.replace(/\bhover\b/g, '');
+			}
+		});
+	}, 750);
+	/* Global using */
 	// Get the object whole height. (include margin)
 	function getOuterHeight(o) {
 		var s = o.currentStyle || window.getComputedStyle(o);

@@ -128,7 +128,7 @@ body {
 	border-radius: 5px;
 	transition: all 500ms;
 }
-.block li:hover {
+.block li.hover {
 	background: rgba(255,255,255,0.75);
 	background-clip: padding-box;
 }
@@ -147,6 +147,9 @@ body {
 	font-style: italic;
 	text-align: right;
 	margin-top: 0.35em;
+}
+.block .basic p, .block .detail p {
+	margin-bottom: 0.75em;
 }
 .block li p.title {
 	font-size: 1.15em;
@@ -169,7 +172,7 @@ body {
 	padding-left: 0.55em;
 	padding-right: 0.35em;
 }
-.block li:hover .detail {
+.block li.hover .detail {
 	opacity: 1;
 	max-height: 3em;
 	-webkit-transition: opacity 550ms, max-height 750ms;
@@ -228,5 +231,8 @@ footer {
 		text-align: center;
 		padding-left: 0;
 		padding-right: 0;
+	}
+	.block .basic p, .block .detail p {
+		margin-bottom: 1.25em;
 	}
 }
