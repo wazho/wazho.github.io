@@ -4,6 +4,9 @@ html, body {
 body {
 	background: #f2f2f2 url('../images/bg-tile.png');
 }
+::-webkit-scrollbar { 
+    display: block;
+}
 .container {
 	position: relative;
 	width: 620px;
@@ -141,7 +144,7 @@ body {
 	color: green;
 }
 .block p {
-	margin: 0.35em 0;
+	margin: 0.55em 0;
 }
 .block p.during {
 	font-style: italic;
@@ -158,10 +161,10 @@ body {
 	padding-left: 0.5em;
 }
 .block li .detail {
-	margin: 0 0 0 0.25em;
+	max-height: 0;
 	color: #656565;
 	opacity: 0;
-	max-height: 0;
+	margin: 0 0 0 0.25em;
 	-webkit-transition: opacity 350ms, max-height 750ms;
 	   -moz-transition: opacity 350ms, max-height 750ms;
 	    -ms-transition: opacity 350ms, max-height 750ms;
@@ -173,13 +176,16 @@ body {
 	padding-right: 0.35em;
 }
 .block li.hover .detail {
+	max-height: 5em;
 	opacity: 1;
-	max-height: 3em;
-	-webkit-transition: opacity 550ms, max-height 750ms;
-	   -moz-transition: opacity 550ms, max-height 750ms;
-	    -ms-transition: opacity 550ms, max-height 750ms;
-	     -o-transition: opacity 550ms, max-height 750ms;
-	        transition: opacity 550ms, max-height 750ms;
+	-webkit-transition: opacity 550ms, max-height 1750ms;
+	   -moz-transition: opacity 550ms, max-height 1750ms;
+	    -ms-transition: opacity 550ms, max-height 1750ms;
+	     -o-transition: opacity 550ms, max-height 1750ms;
+	        transition: opacity 550ms, max-height 1750ms;
+}
+.block li.hover > :last-child {
+	margin-top: 1em;
 }
 footer {
 	height: 225px;
