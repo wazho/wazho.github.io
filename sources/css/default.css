@@ -3,6 +3,7 @@ html, body {
 }
 body {
 	background: #f2f2f2 url('../images/bg-tile.png');
+	overflow-x: hidden;
 }
 ::-webkit-scrollbar { 
     display: block;
@@ -17,6 +18,9 @@ body {
 .container:first-child {
 	min-height: 100%;
 	margin: 0 auto;
+}
+.container:last-of-type {
+	margin-bottom: 6%;
 }
 .profile {
 	display: inline-block;
@@ -188,11 +192,18 @@ body {
 	margin-top: 1em;
 }
 footer {
-	height: 225px;
+	background-image: url('../images/footer-husky.svg');
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-size: auto 120%;
+	height: 275px;
 }
 @media screen and (max-width: 767px) {
 	.container {
 		width: 480px;
+	}
+	.container:last-of-type {
+		margin-bottom: 12%;
 	}
 	.profile .nickname {
 		display: none;
@@ -201,6 +212,9 @@ footer {
 @media screen and (max-width: 480px) {
 	.container {
 		width: 320px;
+	}
+	.container:last-of-type {
+		margin-bottom: 25%;
 	}
 	.profile h2.subtitle {
 		margin-bottom: 0.75em;
@@ -240,5 +254,8 @@ footer {
 	}
 	.block .basic p, .block .detail p {
 		margin-bottom: 1.25em;
+	}
+	footer {
+		background-position: center top;
 	}
 }
