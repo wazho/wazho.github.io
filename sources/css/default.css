@@ -197,6 +197,21 @@ footer {
 	background-position: right top;
 	background-size: auto 120%;
 	height: 275px;
+	text-align: center;
+	font-family: "Simonetta", "Trebuchet MS", Arial, sans-serif;
+}
+footer:before {
+	display: inline-block;
+	content: '';
+	vertical-align: bottom;
+	height: 100%;
+}
+footer .copyright {
+	display: inline-block;
+	width: 90%;
+	height: 2em;
+	font-size: 1.25em;
+	line-height: 2em;
 }
 @media screen and (max-width: 767px) {
 	.container {
@@ -257,5 +272,9 @@ footer {
 	}
 	footer {
 		background-position: center top;
+	}
+	footer .copyright {
+		background-color: rgba(255, 255, 255, 0.85);
+		border-radius: 5px;
 	}
 }
