@@ -11,14 +11,14 @@
 	GitHub: http://github.com/grass0916
 	Site:   http://salmon.tw
 
-	Copyright 2015 Salmon
+	Copyright 2016 Salmon
 
 -->
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>About me, Salmon.</title>
-	<meta name="author" content="Salmon">
-	<meta name="account" content="grass0916">
+	<meta name="author" content="Salmon" />
+	<meta name="account" content="grass0916" />
 	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Simonetta:400,900|Balthazar">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Bree+Serif">
@@ -84,14 +84,26 @@
 			<ul>
 				<li class='scroll-trigger'>
 					<img class='pawprint' src='sources/images/pawprint.png' ondragstart='return false' />
+					<p class='title job'>Intern (Software Programmer)</p>
+					<div class='basic'>
+						<p class='company'>Delta Electronics, Inc. Taiwan</p>
+					</div>
+					<div class='detail'>
+						<p class='domain'>> Web development</p>
+					</div>
+					<p class='during'>July 2016 - present</p>
+				</li>
+				<li class='scroll-trigger'>
+					<img class='pawprint' src='sources/images/pawprint.png' ondragstart='return false' />
 					<p class='title job'>Intern / Research Assistants</p>
 					<div class='basic'>
 						<p class='company'>Institute of Information Science - Academia Sinica</p>
 					</div>
 					<div class='detail'>
 						<p class='boss'>PI:<a href='http://www.iis.sinica.edu.tw/~swc/', target='_blank'><span class='name'>Dr. Sheng-Wei Chen</span></a>@ <a href='http://mmnet.iis.sinica.edu.tw/' target='_blank'>MMNET Lab</a></p>
+						<p class='domain'>> System development, Data analysis</p>
 					</div>
-					<p class='during'>June 2014 - present</p>
+					<p class='during'>June 2014 - Feb. 2016</p>
 				</li>
 			</ul>
 		</div>
@@ -125,7 +137,8 @@
 	// 'scroll, addEventListener' makes the resource too wasteful.
 	setInterval(function pageScrollTriggerHover() {
 		// pcY - pageCenterY.
-		var pcY      = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) / 5 * 2;
+		var fixedRate = document.body.clientHeight > 1000 ? 3 : 2;
+		var pcY      = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) / 5 * fixedRate;
 		var $trigers = document.getElementsByClassName('scroll-trigger');
 		[].forEach.call($trigers, function ($e) {
 			// eYt - elementY_top ; eYb - elementY_btm.

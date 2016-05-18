@@ -180,7 +180,7 @@ body {
 	padding-right: 0.35em;
 }
 .block li.hover .detail {
-	max-height: 5em;
+	max-height: 8em;
 	opacity: 1;
 	-webkit-transition: opacity 550ms, max-height 1750ms;
 	   -moz-transition: opacity 550ms, max-height 1750ms;
