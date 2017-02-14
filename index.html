@@ -11,7 +11,7 @@
 	GitHub: http://github.com/grass0916
 	Site:   http://salmon.tw
 
-	Copyright 2016 Salmon
+	Copyright 2017 Salmon
 
 -->
 <head>
@@ -84,15 +84,27 @@
 			<ul>
 				<li class='scroll-trigger'>
 					<img class='pawprint' src='sources/images/pawprint.png' ondragstart='return false' />
+					<p class='title job'>Project Manager &#38; Developer</p>
+					<div class='basic'>
+						<p class='company'>NTUST CSIE GAME Lab</p>
+					</div>
+					<div class='detail'>
+						<p class='boss'>Leader:<a href='http://faculty.csie.ntust.edu.tw/~wktai/', target='_blank'><span class='name'>Prof. Wen-Kai Tai</span></a>@ <a href='http://gamelab.csie.ntust.edu.tw/' target='_blank'>GAME Lab</a></p>
+						<p class='domain'>&#62; Algorithm development</p>
+					</div>
+					<p class='during'>Oct 2016 - present</p>
+				</li>
+				<li class='scroll-trigger'>
+					<img class='pawprint' src='sources/images/pawprint.png' ondragstart='return false' />
 					<p class='title job'>Summer Intern (Front-end Engineer)</p>
 					<div class='basic'>
 						<p class='company'>Delta Electronics, Inc. Taiwan</p>
 					</div>
 					<div class='detail'>
 						<p class='department'><a href='http://www.delta.com.tw/', target='_blank'>Delta Research Center</a></p>
-						<p class='domain'>> Front-end web development</p>
+						<p class='domain'>&#62; Front-end web development</p>
 					</div>
-					<p class='during'>July 2016 - August 2016</p>
+					<p class='during'>July 2016 - Aug. 2016</p>
 				</li>
 				<li class='scroll-trigger'>
 					<img class='pawprint' src='sources/images/pawprint.png' ondragstart='return false' />
@@ -102,15 +114,32 @@
 					</div>
 					<div class='detail'>
 						<p class='boss'>PI:<a href='http://www.iis.sinica.edu.tw/~swc/', target='_blank'><span class='name'>Dr. Sheng-Wei Chen</span></a>@ <a href='http://mmnet.iis.sinica.edu.tw/' target='_blank'>MMNET Lab</a></p>
-						<p class='domain'>> System development, Data analysis</p>
+						<p class='domain'>&#62; System development, Data analysis</p>
 					</div>
 					<p class='during'>June 2014 - Feb. 2016</p>
 				</li>
 			</ul>
 		</div>
 	</div>
+	<div class='container'>
+		<div class='block articles'>
+			<h1 class='title'>Articles</span></h1>
+			<ul>
+				<li class='scroll-trigger'>
+					<img class='pawprint' src='sources/images/pawprint.png' ondragstart='return false' />
+					<p class='title article'>Under construction</p>
+					<div class='basic'>
+						<p class='tags'></p>
+					</div>
+					<div class='detail preview'>
+						<p class='content'>Daily, Techs ...</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
 	<footer>
-		<div class='copyright'>© 2012 - 2016 by Ze-Hao Wang</div>
+		<div class='copyright'>© 2012 - 2017 by Ze-Hao Wang</div>
 	</footer>
 </body>
 
@@ -134,24 +163,30 @@
 		$container.style.paddingBottom = verticalPadding + 'px';
 		$container.style.minHeight     = '0px';
 	}
+/*
 	// Detect the scroll position the trigger the hovered element.
 	// 'scroll, addEventListener' makes the resource too wasteful.
 	setInterval(function pageScrollTriggerHover() {
-		// pcY - pageCenterY.
-		var fixedRate = document.body.clientHeight > 1000 ? 3 : 2;
-		var pcY      = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) / 5 * fixedRate;
-		var $trigers = document.getElementsByClassName('scroll-trigger');
-		[].forEach.call($trigers, function ($e) {
-			// eYt - elementY_top ; eYb - elementY_btm.
-			var eYt = $e.getBoundingClientRect().top;
-			var eYb = $e.getBoundingClientRect().bottom;
-			if ((pcY >= eYt && pcY <= eYb) && ! /\bhover\b/.test($e.className)) {
-				$e.className += ' hover';
-			} else if ((pcY < eYt || pcY > eYb) && /\bhover\b/.test($e.className)) {
-				$e.className = $e.className.replace(/\bhover\b/g, '');
-			}
-		});
+		var screenWidth = window.innerWidth || document.clientWidth || document.body.clientWidth;
+		// For mobile and pad client.
+		if (screenWidth < 1080) {
+			// pcY - pageCenterY.
+			var fixedRate = document.body.clientHeight > 1000 ? 3 : 2;
+			var pcY      = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) / 5 * fixedRate;
+			var $trigers = document.getElementsByClassName('scroll-trigger');
+			[].forEach.call($trigers, function ($e) {
+				// eYt - elementY_top ; eYb - elementY_btm.
+				var eYt = $e.getBoundingClientRect().top;
+				var eYb = $e.getBoundingClientRect().bottom;
+				if ((pcY >= eYt && pcY <= eYb) && ! /\bhover\b/.test($e.className)) {
+					$e.className += ' hover';
+				} else if ((pcY < eYt || pcY > eYb) && /\bhover\b/.test($e.className)) {
+					$e.className = $e.className.replace(/\bhover\b/g, '');
+				}
+			});
+		}
 	}, 750);
+*/
 	/* Global using */
 	// Get the object whole height. (include margin)
 	function getOuterHeight(o) {

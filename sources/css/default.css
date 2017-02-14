@@ -131,11 +131,11 @@ body {
 	opacity: 0;
 	transition: all 500ms;
 }
-.block li.hover {
-	background: rgba(255,255,255,0.75);
+.block li.hover, .block li:hover {
+	background: rgba(255,255,255,0.45);
 	background-clip: padding-box;
 }
-.block li.hover img.pawprint {
+.block li.hover img.pawprint, .block li:hover img.pawprint {
 	opacity: 1;
 	top: -18px;
 }
@@ -166,6 +166,7 @@ body {
 }
 .block li .detail {
 	max-height: 0;
+	overflow: hidden;
 	color: #656565;
 	opacity: 0;
 	margin: 0 0 0 0.25em;
@@ -179,7 +180,10 @@ body {
 	padding-left: 0.55em;
 	padding-right: 0.35em;
 }
-.block li.hover .detail {
+.block .detail p {
+	margin: 0.25em;
+}
+.block li.hover .detail, .block li:hover .detail {
 	max-height: 8em;
 	opacity: 1;
 	-webkit-transition: opacity 550ms, max-height 1750ms;
@@ -188,7 +192,7 @@ body {
 	     -o-transition: opacity 550ms, max-height 1750ms;
 	        transition: opacity 550ms, max-height 1750ms;
 }
-.block li.hover > :last-child {
+.block li.hover > :last-child, .block li:hover > :last-child {
 	margin-top: 1em;
 }
 footer {
