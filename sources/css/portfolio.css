@@ -1,0 +1,154 @@
+.container {
+	text-align: center;
+}
+
+.card {
+	position: relative;
+	display: inline-block;
+	width: 275px;
+	height: 375px;
+	background-color: #333;
+	margin: 25px 15px;
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
+}
+
+.card:hover {
+
+}
+
+.card .card-bg {
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+	background-position: center;
+	background-size: cover;
+	/* Transition */
+	transition: background 0.2s ease, transform 0.2s ease, opacity 0.5s ease;
+}
+
+.card:hover .card-bg {
+	opacity: 0.85;
+	transform: scale(1.25);
+}
+
+.card .card-info {
+	position: relative;
+	top: -72px;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.55);
+	/* Transition */
+	transition: all 0.5s ease;
+}
+
+.card:hover .card-info {
+	top: -100%;
+	background: rgba(0, 0, 0, 0.65);
+}
+
+.card .card-info .title {
+	display: block;
+	width: 80%;
+	height: 20%;
+	color: #EEE;
+	font-size: 24px;
+	line-height: 72px;
+	margin: 0 auto;
+}
+
+.card .card-info .title::after {
+	content: '';
+	display: block;
+	position: relative;
+	bottom: 10px;
+	width: 0%;
+	height: 2px;
+	background: #CCC;
+	margin: 0 auto;
+	/* Transition */
+	transition: all 0.5s ease;
+}
+
+.card:hover .card-info .title::after {
+	transition-delay: 0.65s;
+	width: 100%;
+}
+
+.card .card-info .content {
+	position: relative;
+	width: 300%;
+	height: 60%;
+	text-align: left;
+	/* Transition */
+	transition: all 0.5s ease;
+}
+
+.card .card-info .content.content-1st {
+	left: 0%;
+}
+
+.card .card-info .content.content-2nd {
+	left: -100%;
+}
+
+.card .card-info .content.content-3rd {
+	left: -200%;
+}
+
+.card .card-info .content div {
+	display: inline-block;
+	vertical-align: top;
+	width: 33.3%;
+	height: 100%;
+	color: rgba(225, 225, 225, 0);
+	font-size: 14px;
+	text-align: left;
+	line-height: 28px;
+	/* Transition */
+	transition: all 0.5s ease;
+}
+
+.card:hover .card-info .content div {
+	transition-delay: 0.75s;
+	color: rgba(225, 225, 225, 1);
+}
+
+.card .card-info .content div p {
+	width: 76%;
+	padding: 0 12%;
+}
+
+.card .card-info .content .description {
+
+}
+
+.card .card-info .content .techniques {
+
+}
+
+.card .card-info .content .others {
+
+}
+
+.card .card-info .switchers {
+	position: relative;
+	width: 100%;
+	height: 20%;
+	background: #FFF;
+}
+
+.card .card-info .switchers .trigger {
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	margin: 20px;
+	background: #AAA;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+.card .card-info .switchers .trigger.active {
+	border-radius: 5px;
+}

@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Ze-Hao Wang</title>
+	<meta name="author" content="Salmon" />
+	<meta name="account" content="grass0916" />
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="sources/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="sources/css/portfolio.css">
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <!--
+	<script type="text/javascript" src="sources/js/react.min.js"></script>
+	<script type="text/javascript" src="sources/js/react-dom.min.js"></script>
+	<script type="text/javascript" src="sources/js/babel.min.js"></script>
+	-->
+</head>
+<body>
+	<div id="root"></div>
+	<script type="text/babel">
+		const produtions = [
+			{
+				name: "Name",
+				description: "Description",
+				techniques: "Techniques",
+				others: "Others",
+				thumbnail: "https://github.com/grass0916/Stardust-Script/raw/master/readme/01.jpg",
+			},
+			{
+				name: "Name",
+				description: "Description",
+				techniques: "Techniques",
+				others: "Others",
+				thumbnail: "https://github.com/grass0916/Stardust-Script/raw/master/readme/02.jpg",
+			},
+			{
+				name: "Name",
+				description: "Description",
+				techniques: "Techniques",
+				others: "Others",
+				thumbnail: "https://github.com/grass0916/Stardust-Script/raw/master/readme/03.jpg",
+			},
+			{
+				name: "Name",
+				description: "Description",
+				techniques: "Techniques",
+				others: "Others",
+				thumbnail: "https://github.com/grass0916/Stardust-Script/raw/master/readme/04.jpg",
+			},
+		];
+
+
+		class ProductionCard extends React.Component {
+			// Initial default data.
+			constructor(props) {
+				super(props);
+				this.state = {
+					content: "content-2nd"
+				};
+				this.handleClick = this.handleClick.bind(this);
+			}
+
+			handleClick(contentClassName) {
+				this.setState(prevState => ({
+					content: contentClassName
+				}));
+			}
+
+			render() {
+				return (
+					<div className="card">
+						<div className="card-bg" style={{backgroundImage: "url(" + this.props.prodution.thumbnail + ")"}} />
+						<div className="card-info">
+							<div className="title">{this.props.prodution.name}</div>
+							<div className={`content ${this.state.content}`}>
+								<div className="techniques"><p>{this.props.prodution.techniques}</p></div>
+								<div className="description"><p>{this.props.prodution.description}</p></div>
+								<div className="others"><p>{this.props.prodution.others}</p></div>
+							</div>
+							<div className="switchers">
+								<div className="techniques trigger" onClick={() => this.handleClick("content-1st")}></div>
+								<div className="description trigger active" onClick={() => this.handleClick("content-2nd")}></div>
+								<div className="others trigger" onClick={() => this.handleClick("content-3rd")}></div>
+							</div>
+						</div>
+					</div>
+				);
+			}
+		};
+
+		const productionCards = produtions.map((prodution) => 
+			<ProductionCard prodution={prodution} />
+		);
+
+		ReactDOM.render(
+			<div className="container">{productionCards}</div>,
+			document.getElementById('root')
+		);
+	</script>
+</body>
+</html>
