@@ -8,10 +8,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="sources/css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="sources/css/portfolio.css">
-    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
-    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-    <!--
+	<script src="https://unpkg.com/react@latest/dist/react.js"></script>
+	<script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+	<!--
 	<script type="text/javascript" src="sources/js/react.min.js"></script>
 	<script type="text/javascript" src="sources/js/react-dom.min.js"></script>
 	<script type="text/javascript" src="sources/js/babel.min.js"></script>
@@ -22,33 +22,35 @@
 	<script type="text/babel">
 		const produtions = [
 			{
-				name: "Name",
+				name:        "Bounty Workers",
 				description: "Description",
-				techniques: "Techniques",
-				others: "Others",
-				thumbnail: "https://github.com/grass0916/Stardust-Script/raw/master/readme/01.jpg",
+				techniques:  "Techniques",
+				others:      "Others",
+				thumbnail:   "https://images.unsplash.com/photo-1479660656269-197ebb83b540",
 			},
 			{
-				name: "Name",
-				description: "Description",
-				techniques: "Techniques",
-				others: "Others",
-				thumbnail: "https://github.com/grass0916/Stardust-Script/raw/master/readme/02.jpg",
+				name:        "MMORPG Maker",
+				description: "Stardust Script is a HTML5 game engine for MMORPG. Game desingers can use it to create 2.5D game. It consists of map editor, scripts and game server.",
+				techniques:  "Techniques",
+				others:      {
+					github: "https://github.com/grass0916/Stardust-Script",
+				},
+				thumbnail:   "https://images.unsplash.com/photo-1479659929431-4342107adfc1",
 			},
 			{
-				name: "Name",
+				name:        "fds",
 				description: "Description",
-				techniques: "Techniques",
-				others: "Others",
-				thumbnail: "https://github.com/grass0916/Stardust-Script/raw/master/readme/03.jpg",
+				techniques:  "Techniques",
+				others:      "Others",
+				thumbnail:   "https://images.unsplash.com/photo-1479644025832-60dabb8be2a1",
 			},
 			{
-				name: "Name",
+				name:        "sd",
 				description: "Description",
-				techniques: "Techniques",
-				others: "Others",
-				thumbnail: "https://github.com/grass0916/Stardust-Script/raw/master/readme/04.jpg",
-			},
+				techniques:  "Techniques",
+				others:      "Others",
+				thumbnail:   "https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a",
+			}
 		];
 
 
@@ -77,7 +79,7 @@
 							<div className={`content ${this.state.content}`}>
 								<div className="techniques"><p>{this.props.prodution.techniques}</p></div>
 								<div className="description"><p>{this.props.prodution.description}</p></div>
-								<div className="others"><p>{this.props.prodution.others}</p></div>
+								<div className="others"><p>{JSON.stringify(this.props.prodution.others)}</p></div>
 							</div>
 							<div className="switchers">
 								<div className="techniques trigger" onClick={() => this.handleClick("content-1st")}></div>
