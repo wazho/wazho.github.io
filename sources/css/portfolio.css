@@ -1,8 +1,3 @@
-html, body, #root {
-	width: 100%;
-	height: 100%;
-}
-
 #root {
 	background-color: #003b2f;
 	background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
@@ -19,17 +14,19 @@ html, body, #root {
 .card {
 	position: relative;
 	display: inline-block;
-	width: 275px;
+	width: 375px;
 	height: 375px;
 	background-color: #333;
-	margin: 25px 15px;
+	margin: 25px 35px;
 	overflow: hidden;
-	border-radius: 10px;
 	box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
 }
 
-.card:hover {
-
+@media screen and (max-width: 480px) {
+	.card {
+		width: 290px;
+		margin: 25px 15px;
+	}
 }
 
 .card .card-bg {
@@ -49,7 +46,7 @@ html, body, #root {
 
 .card .card-info {
 	position: relative;
-	top: -72px;
+	top: -60px;
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.55);
@@ -65,10 +62,10 @@ html, body, #root {
 .card .card-info .title {
 	display: block;
 	width: 80%;
-	height: 20%;
+	height: 15%;
 	color: #EEE;
-	font-size: 24px;
-	line-height: 72px;
+	font-size: 20px;
+	line-height: 60px;
 	margin: 0 auto;
 }
 
@@ -93,7 +90,7 @@ html, body, #root {
 .card .card-info .content {
 	position: relative;
 	width: 300%;
-	height: 60%;
+	height: 65%;
 	text-align: left;
 	/* Transition */
 	transition: all 0.5s ease;
@@ -125,44 +122,45 @@ html, body, #root {
 }
 
 .card:hover .card-info .content div {
-	transition-delay: 0.75s;
+	transition-delay: 0.65s;
 	color: rgba(225, 225, 225, 1);
 }
 
 .card .card-info .content div p {
 	width: 76%;
+	height: 100%;
 	padding: 0 12%;
+	overflow: hidden;
 }
 
-.card .card-info .content .description {
-
-}
-
-.card .card-info .content .techniques {
-
-}
-
-.card .card-info .content .others {
-
+@media screen and (max-width: 480px) {
+	.card .card-info .content div p {
+		width: 86%;
+		padding: 0 7%;
+	}
 }
 
 .card .card-info .switchers {
 	position: relative;
 	width: 100%;
 	height: 20%;
-	background: #FFF;
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
 }
 
 .card .card-info .switchers .trigger {
 	display: inline-block;
-	width: 35px;
-	height: 35px;
-	margin: 20px;
-	background: #AAA;
-	border-radius: 50px;
+	margin: 20px 30px;
 	cursor: pointer;
+	color: #EEE;
+	opacity: 0.5;
+	/* Transition */
+	transition: all 0.5s ease;
+}
+
+.card .card-info .switchers .trigger:hover {
+	opacity: 0.75;
 }
 
 .card .card-info .switchers .trigger.active {
-	border-radius: 5px;
+	opacity: 0.95;
 }
