@@ -1,88 +1,83 @@
 <!doctype html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Ze-Hao Wang</title>
-	<meta name="author" content="Salmon" />
-	<meta name="account" content="grass0916" />
-	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	<link rel="stylesheet" type="text/css" href="sources/css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="sources/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="sources/css/portfolio.css">
-	<script src="https://unpkg.com/react@latest/dist/react.js"></script>
-	<script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
-	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-	<!--
-	<script type="text/javascript" src="sources/js/react.min.js"></script>
-	<script type="text/javascript" src="sources/js/react-dom.min.js"></script>
-	<script type="text/javascript" src="sources/js/babel.min.js"></script>
-	-->
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<title>() Ze-Hao Wang's portfolio</title>
+	<meta name='author' content='Salmon' />
+	<meta name='account' content='grass0916' />
+	<meta name='viewport' content='width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no'>
+	<link rel='stylesheet' type='text/css' href='sources/css/normalize.css'>
+	<link rel='stylesheet' type='text/css' href='sources/css/font-awesome.min.css'>
+	<link rel='stylesheet' type='text/css' href='sources/css/portfolio.css'>
+	<script type='text/javascript' src='sources/js/react.min.js'></script>
+	<script type='text/javascript' src='sources/js/react-dom.min.js'></script>
+	<script type='text/javascript' src='sources/js/babel.min.js'></script>
 </head>
 <body>
-	<div id="root"></div>
-	<script type="text/babel">
+	<div id='root'></div>
+	<script type='text/babel'>
 		const produtions = [
 			{
-				name:        "Bounty Workers",
-				description: "Bounty Workers is a platform for researchers and requesters. It can help them to find the employees and give the coupons be the rewards, in order to reduce the their chores and let they focus on the task. And this is my first development of indenpent large ecommerce system.",
-				techniques:  "Techniques",
-				others:      "Others",
-				thumbnail:   "https://images.unsplash.com/photo-1479659929431-4342107adfc1",
+				name:        'Bounty Workers',
+				description: 'Bounty Workers is a platform for researchers and requesters. It can help them to find the employees and give the coupons be the rewards, in order to reduce the their chores and let they focus on the task. And this is my first development of indenpent large ecommerce system.',
+				techniques:  'Techniques',
+				others:      'Others',
+				thumbnail:   'https://images.unsplash.com/photo-1479659929431-4342107adfc1',
 			},
 			{
-				name:        "MMORPG Maker",
-				description: "Stardust Script is a HTML5 game engine for MMORPG. Game designers can use it to create 2.5D game quickyly by themselves. It consists of map editor, scripting and game server, so game designers can focus on the content of game.",
-				techniques:  "Techniques",
+				name:        'MMORPG Maker',
+				description: 'Stardust Script is a HTML5 game engine for MMORPG. Game designers can use it to create 2.5D game quickyly by themselves. It consists of map editor, scripting and game server, so game designers can focus on the content of game.',
+				techniques:  'Techniques',
 				others: {
-					github: "https://github.com/grass0916/Stardust-Script",
+					github: 'https://github.com/grass0916/Stardust-Script',
 				},
-				thumbnail:   "https://images.unsplash.com/photo-1479659929431-4342107adfc1",
+				thumbnail:   'https://images.unsplash.com/photo-1479659929431-4342107adfc1',
 			},
 			{
-				name:        "Translation voting system",
-				description: "This is build for MMORPG Tree of Savior, engage to Chinese version translation via crowdsourcing. This project uses the native file system read/write instead of any database. Relate Facebook OAuth Login to avoid anonymous posting.",
-				techniques:  "Techniques",
+				name:        'Translation voting system',
+				description: 'This is build for MMORPG Tree of Savior, engage to Chinese version translation via crowdsourcing. This project uses the native file system read/write instead of any database. Relate Facebook OAuth Login to avoid anonymous posting.',
+				techniques:  'Techniques',
 				others: {
-					github: "https://github.com/grass0916/Tree-of-Savior-Chinese-Translation-Voting",
+					github: 'https://github.com/grass0916/Tree-of-Savior-Chinese-Translation-Voting',
 				},
-				thumbnail:   "https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a",
+				thumbnail:   'https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a',
 			},
 			{
-				name:        "NTUST GAME Lab",
-				description: "This is my lab website in NTUST. The landing page of the laboratory. I provide the basic user interface template and easy method to updating the information.",
-				techniques:  [ "HTML5", "Pug (Jade)" ],
+				name:        'NTUST GAME Lab',
+				description: 'This is my lab website in NTUST. The landing page of the laboratory. I provide the basic user interface template and easy method to updating the information.',
+				techniques:  [ 'HTML5', 'Pug (Jade)' ],
 				others: {
-					site:   "http://gamelab.csie.ntust.edu.tw/",
-					github: "https://github.com/NTUST-GameLab/lab-website",
+					site:   'http://gamelab.csie.ntust.edu.tw/',
+					github: 'https://github.com/NTUST-GameLab/lab-website',
 				},
-				thumbnail:   "https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a",
+				thumbnail:   'https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a',
 			},
 			{
-				name:        "LoL record LineBot",
-				description: "This bot based on Line message API v2.0, and auto-response the player record of online game - League of Legends. The the game API that used fake access token to grab from the Garena official App.",
-				techniques:  [ "Node.js", "AJAX", "web crawler" ],
+				name:        'LoL record LineBot',
+				description: 'This bot based on Line message API v2.0, and auto-response the player record of online game - League of Legends. The the game API that used fake access token to grab from the Garena official App.',
+				techniques:  [ 'Node.js', 'AJAX', 'web crawler' ],
 				others: {
-					github: "https://",
+					github: 'https://',
 				},
-				thumbnail:   "https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a",
+				thumbnail:   'https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a',
 			},
 			{
-				name:        "DeChat",
-				description: "DeChat is a simple web-based chat room. It's constructed by Node.js with koa. Using React and jQuery AJAX long polling.",
-				techniques:  "Techniques",
+				name:        'DeChat',
+				description: 'DeChat is a simple web-based chat room. It\'s constructed by Node.js with koa. Using React and jQuery AJAX long polling.',
+				techniques:  'Techniques',
 				others: {
-					github: "https://github.com/grass0916/dechat",
+					github: 'https://github.com/grass0916/dechat',
 				},
-				thumbnail:   "https://images.unsplash.com/photo-1479644025832-60dabb8be2a1",
+				thumbnail:   'https://images.unsplash.com/photo-1479644025832-60dabb8be2a1',
 			},
 			{
-				name:        "RO rAthena scriptings",
-				description: "These are the collection of my scripts in Ragnarok Online server emulator.",
-				techniques:  "C++",
+				name:        'RO rAthena scriptings',
+				description: 'These are the collection of my scripts in Ragnarok Online server emulator.',
+				techniques:  'C++',
 				others: {
-					youtube: "https://www.youtube.com/playlist?list=PL0A23B105CA727AF5",
+					youtube: 'https://www.youtube.com/playlist?list=PL0A23B105CA727AF5',
 				},
-				thumbnail:   "https://images.unsplash.com/photo-1479644025832-60dabb8be2a1",
+				thumbnail:   'https://images.unsplash.com/photo-1479644025832-60dabb8be2a1',
 			},
 		];
 
@@ -91,7 +86,7 @@
 			constructor(props) {
 				super(props);
 				this.state = {
-					content: "content-2nd"
+					content: 'content-2nd'
 				};
 				this.handleClick = this.handleClick.bind(this);
 			}
@@ -104,26 +99,26 @@
 
 			render() {
 				return (
-					<div className="card">
-						<div className="card-bg" style={{backgroundImage: "url(" + this.props.prodution.thumbnail + ")"}} />
-						<div className="card-info">
-							<div className="title">{this.props.prodution.name}</div>
+					<div className='card'>
+						<div className='card-bg' style={{backgroundImage: 'url(' + this.props.prodution.thumbnail + ')'}} />
+						<div className='card-info'>
+							<div className='title'>{this.props.prodution.name}</div>
 							<div className={`content ${this.state.content}`}>
-								<div className="techniques"><p>{JSON.stringify(this.props.prodution.techniques)}</p></div>
-								<div className="description"><p>{this.props.prodution.description}</p></div>
-								<div className="others"><p>{JSON.stringify(this.props.prodution.others)}</p></div>
+								<div className='techniques'><p>{JSON.stringify(this.props.prodution.techniques)}</p></div>
+								<div className='description'><p>{this.props.prodution.description}</p></div>
+								<div className='others'><p>{JSON.stringify(this.props.prodution.others)}</p></div>
 							</div>
-							<div className="switchers">
-								<div className={`techniques trigger ${this.state.content == "content-1st" ? "active" : ""}`}
-									onClick={() => this.handleClick("content-1st")}>
+							<div className='switchers'>
+								<div className={`techniques trigger ${this.state.content == 'content-1st' ? 'active' : ''}`}
+									onClick={() => this.handleClick('content-1st')}>
 									<i className='fa fa-code fa-2x' />
 								</div>
-								<div className={`techniques trigger ${this.state.content == "content-2nd" ? "active" : ""}`}
-									onClick={() => this.handleClick("content-2nd")}>
+								<div className={`techniques trigger ${this.state.content == 'content-2nd' ? 'active' : ''}`}
+									onClick={() => this.handleClick('content-2nd')}>
 									<i className='fa fa-file-text-o fa-2x' />
 								</div>
-								<div className={`techniques trigger ${this.state.content == "content-3rd" ? "active" : ""}`}
-									onClick={() => this.handleClick("content-3rd")}>
+								<div className={`techniques trigger ${this.state.content == 'content-3rd' ? 'active' : ''}`}
+									onClick={() => this.handleClick('content-3rd')}>
 									<i className='fa fa-link fa-2x' />
 								</div>
 							</div>
@@ -138,7 +133,7 @@
 		);
 
 		ReactDOM.render(
-			<div className="container">{productionCards}</div>,
+			<div className='container'>{productionCards}</div>,
 			document.getElementById('root')
 		);
 	</script>
