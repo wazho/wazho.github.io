@@ -89,6 +89,9 @@ body {
 	transition-property: color;
 	transition-duration: 250ms;
 }
+.socialContainer i.blog:hover {
+	color: #3399FF;
+}
 .socialContainer i.github:hover {
 	color: #767676;
 }
@@ -234,6 +237,9 @@ footer .copyright {
 	line-height: 2em;
 }
 @media screen and (max-width: 767px) {
+	.socialContainer i {
+		margin: 0 15px;
+	}
 	.container {
 		width: 480px;
 	}
