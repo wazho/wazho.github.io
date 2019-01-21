@@ -90,13 +90,16 @@ body {
 	transition-duration: 250ms;
 }
 .socialContainer i.blog:hover {
-	color: #3399FF;
+	color: #027c0c;
 }
 .socialContainer i.github:hover {
 	color: #767676;
 }
 .socialContainer i.facebook:hover {
 	color: #3A5795;
+}
+.socialContainer i.resume:hover {
+	color: #d48a00;
 }
 .socialContainer i.youtube:hover {
 	color: #CC181E;
