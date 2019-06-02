@@ -41,7 +41,7 @@
 			</div>
 		</div>
 		<div id='socail' class='socialContainer' ondragstart='return false'>
-			<a href='https://blog.salmon.tw' target='_blank'><i class='blog fas fa-book fa-3x'></i></a>
+			<a href='#' onclick='toggleBlogsDialog()'><i class='blog fas fa-book fa-3x'></i></a>
 			<a href='https://github.com/wazho' target='_blank'><i class='github fab fa-github fa-3x'></i></a>
 			<a href='https://salmon.tw/current/resume.pdf' target='_blank'><i class='resume fas fa-address-card fa-3x'></i></a>
 			<a href='https://fb.me/grass0916' target='_blank'><i class='facebook fab fa-facebook-square fa-3x'></i></a>
@@ -137,6 +137,35 @@
 	<footer>
 		<div class='copyright'>© 2012 - 2019 by Ze-Hao Wang</div>
 	</footer>
+	<div id='mask' class='mask'>
+		<div class='blog-selection-box'>
+			<div class='box'>
+				<a href='https://blog.salmon.tw'>
+					<i class='fas fa-laptop-code fa-3x'></i>
+					<p>IT Blog</p>
+				</a>
+			</div>
+			<div class='box'>
+				<a href='https://eat.salmon.tw'>
+					<i class='fas fa-utensils fa-3x'></i>
+					<p>Food Blog</p>
+				</a>
+			</div>
+			<div class='box'>
+				<a href='https://acg.salmon.tw/'>
+					<i class='fas fa-gamepad fa-3x'></i>
+					<p>ACG Blog</p>
+				</a>
+			</div>
+			<div class='box'>
+				<a href='https://drum.salmon.tw'>
+					<i class='fas fa-drum fa-3x'></i>
+					<p>Drums Blog</p>
+				</a>
+			</div>
+			<i class='close fas fa-times fa-2x' onclick='toggleBlogsDialog()'></i>
+		</div>
+	</div>
 </body>
 
 <script>
@@ -188,5 +217,10 @@
 	function getOuterHeight(o) {
 		var s = o.currentStyle || window.getComputedStyle(o);
 		return o.offsetHeight + parseInt(s.marginTop) + parseInt(s.marginBottom);
+	}
+	/* Show blog selection modal */
+	function toggleBlogsDialog() {
+		const element = document.getElementById('mask');
+		element.classList.toggle('active');
 	}
 </script>
